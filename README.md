@@ -1,8 +1,8 @@
-![W3Security logo](https://w3security.io/style/asset/logo/w3security-print.svg)
+![W3Security logo](https://w3security.tech/style/asset/logo/w3security-print.svg)
 
-***
+---
 
-[![Known Vulnerabilities](https://w3security.io/test/npm/@w3security/dep-graph/badge.svg)](https://w3security.io/test/npm/@w3security/dep-graph)
+[![Known Vulnerabilities](https://w3security.tech/test/npm/@w3security/dep-graph/badge.svg)](https://w3security.tech/test/npm/@w3security/dep-graph)
 
 W3Security helps you find, fix and monitor for known vulnerabilities in your dependencies, both on an ad hoc basis and as part of your CI (Build) system.
 
@@ -16,16 +16,19 @@ A directed graph, where a node represents a package instance and an edge from no
 
 A package (`name@version`) can have several different nodes (i.e. instances) in the graph. This flexibility is useful for some ecosystems, for example:
 
-* in `npm` due to conflict-resolutions by duplication. e.g. try to `npm i tap@5.7` and then run `npm ls` and look for `strip-ansi@3.0.1`. You'll see that in some instances it depends on `ansi-regex@2.0.0` while in others on `ansi-regex@2.1.1`.
-* in `maven` due to "exclusion" rules. A dependency `foo` can be declared in the `pom.xml` such that some of it's sub-dependencies are excluded via the `<exclusions>` tag. If the same dependency is required elsewhere without (or with different) exclusions then `foo` can appear in the tree with different sub-trees.
+- in `npm` due to conflict-resolutions by duplication. e.g. try to `npm i tap@5.7` and then run `npm ls` and look for `strip-ansi@3.0.1`. You'll see that in some instances it depends on `ansi-regex@2.0.0` while in others on `ansi-regex@2.1.1`.
+- in `maven` due to "exclusion" rules. A dependency `foo` can be declared in the `pom.xml` such that some of it's sub-dependencies are excluded via the `<exclusions>` tag. If the same dependency is required elsewhere without (or with different) exclusions then `foo` can appear in the tree with different sub-trees.
 
 This can also be used to break cycles in the graph, e.g.:
 
 instead of:
+
 ```
 A -> B -> C -> A
 ```
+
 can have:
+
 ```
 A -> B -> C -> A'
 ```
@@ -64,11 +67,13 @@ export interface DepGraph {
     version?: string;
     purl?: string;
   }>;
-  pkgPathsToRoot(pkg: Pkg): Array<Array<{
-    name: string;
-    version?: string;
-    purl?: string;
-  }>>;
+  pkgPathsToRoot(pkg: Pkg): Array<
+    Array<{
+      name: string;
+      version?: string;
+      purl?: string;
+    }>
+  >;
   directDepsLeadingTo(pkg: Pkg): Array<{
     name: string;
     version?: string;
@@ -99,7 +104,7 @@ export interface DepGraphData {
     info: {
       name: string;
       version?: string;
-    purl?: string;
+      purl?: string;
     };
   }>;
   graph: {
@@ -114,7 +119,7 @@ export interface DepGraphData {
           property?: {
             name: string;
           };
-        },
+        };
         labels?: {
           [key: string]: string | undefined;
         };
@@ -132,6 +137,7 @@ export interface DepGraphData {
 `DepGraphData` can be used to construct a `DepGraph` instance using `createFromJSON`
 
 ### `DepGraphBuilder`
+
 `DepGraphBuilder` is used to create new `DepGraph` instances by adding packages and their connections.
 
 ```typescript
@@ -175,6 +181,7 @@ export interface DepGraphData {
   public build(): types.DepGraph
 
 ```
+
 ### The `legacy` module
 
 A `DepTree` is a legacy structure used by the W3Security CLI to represent dependency trees. Conversion functions in the `legacy` module ease the gradual migration of code that relies on the legacy format.
@@ -188,11 +195,12 @@ interface DepTree {
   name: string;
   version: string;
   dependencies?: {
-    [depName: string]: DepTree
+    [depName: string]: DepTree;
   };
 }
 ```
 
 The `legacy` conversion functions aim to maintain extra data that might be attached to the dep-tree and is dependant upon in code that wasn't yet updated to use solely dep-graphs:
-* `targetOS` which exists on tree roots for Docker scans
-* `versionProvenance` which might exist on the nodes of maven trees, storing information about the source manifest that caused the specfic version to be resolved
+
+- `targetOS` which exists on tree roots for Docker scans
+- `versionProvenance` which might exist on the nodes of maven trees, storing information about the source manifest that caused the specfic version to be resolved
