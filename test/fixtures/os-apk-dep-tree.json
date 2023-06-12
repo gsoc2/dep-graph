@@ -1,0 +1,55 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "packageFormatVersion": "apk:0.0.1",
+  "targetOS": {
+    "name": "ubuntu",
+    "version": "18.04"
+  },
+  "dependencies": {
+    "a": {
+      "name": "a",
+      "version": "1.0.0",
+      "dependencies": {
+        "c": {
+          "name": "c",
+          "version": "1.0.0",
+          "dependencies": {
+            "d": {
+              "name": "d",
+              "version": "0.0.1",
+              "dependencies": {
+                "e": {
+                  "name": "e",
+                  "version": "5.0.0"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "b": {
+      "name": "b",
+      "version": "1.0.0",
+      "dependencies": {
+        "c": {
+          "name": "c",
+          "version": "1.0.0",
+          "dependencies": {
+            "d": {
+              "name": "d",
+              "version": "0.0.2",
+              "dependencies": {
+                "e": {
+                  "name": "e",
+                  "version": "5.0.0"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

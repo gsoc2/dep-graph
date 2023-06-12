@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "pretty": true,
+    "target": "es2018",
+    "lib": [
+      "es2018"
+    ],
+    "allowJs": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "declaration": true,
+    "importHelpers": true
+  },
+  "include": [
+    "./src/**/*",
+  ]
+}
