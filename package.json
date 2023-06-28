@@ -3,6 +3,7 @@
   "description": "W3Security dependency graph library",
   "homepage": "https://github.com/w3security/dep-graph#readme",
   "license": "Apache-2.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
