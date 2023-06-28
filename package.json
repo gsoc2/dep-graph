@@ -1,6 +1,7 @@
 {
   "author": "w3security.tech",
   "name": "@w3sec/dep-graph",
+  "version" "2.0.1"
   "description": "W3Security dependency graph library",
   "homepage": "https://github.com/w3security/dep-graph#readme",
   "license": "Apache-2.0",
