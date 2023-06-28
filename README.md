@@ -1,8 +1,3 @@
-![W3Security logo](https://w3security.tech/style/asset/logo/w3security-print.svg)
-
----
-
-[![Known Vulnerabilities](https://w3security.tech/test/npm/@w3security/dep-graph/badge.svg)](https://w3security.tech/test/npm/@w3security/dep-graph)
 
 W3Security helps you find, fix and monitor for known vulnerabilities in your dependencies, both on an ad hoc basis and as part of your CI (Build) system.
 
