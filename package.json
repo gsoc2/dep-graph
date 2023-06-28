@@ -41,7 +41,7 @@
     "benny": "^3.6.15",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
-    "jest": "^27.0.5",
+    "jest": "^27.5.1",
     "prettier": "^2.3.1",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.0.0",
