@@ -1,6 +1,1 @@
 node_modules/
-dist/
-coverage/
-.idea/
-benchmark/results
-isolate-*
