@@ -1,9 +1,9 @@
 {
-  "name": "@w3sec/dep-graph",
+  "name": "@gsoc2/dep-graph",
   "description": "W3Security dependency graph library",
   "homepage": "https://github.com/gsoc2/dep-graph#readme",
   "license": "Apache-2.0",
-  "author": "w3sec",
+  "author": "gsoc2",
   "version": "2.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
