@@ -26,10 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w3security/dep-graph.git"
+    "url": "git+https://github.com/gsoc2/dep-graph.git"
   },
   "bugs": {
-    "url": "https://github.com/w3security/dep-graph/issues"
+    "url": "https://github.com/gsoc2/dep-graph/issues"
   },
   "devDependencies": {
     "@types/graphlib": "^2.1.7",
