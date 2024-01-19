@@ -67,6 +67,6 @@
     "object-hash": "^3.0.0",
     "packageurl-js": "^1.0.0",
     "semver": "^7.0.0",
-    "tslib": "^2"
+    "tslib": "^2.6.2"
   }
 }
